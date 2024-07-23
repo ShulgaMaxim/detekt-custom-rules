@@ -1,3 +1,5 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -49,3 +51,5 @@ dependencies {
     implementation(libs.material)
 
 }
+
+tasks.withType<Detekt> { dependsOn(":custom-rules:assemble") }
